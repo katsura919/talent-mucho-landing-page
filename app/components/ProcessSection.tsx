@@ -44,7 +44,7 @@ export default function ProcessSection() {
 
                 <div className="relative">
                     {/* Connecting line */}
-                    <div className="hidden md:block absolute left-8 top-8 bottom-8 w-px bg-beige-300" />
+                    <div className="hidden md:block absolute left-8 top-8 bottom-10 w-px bg-beige-300" />
 
                     <div className="space-y-12">
                         {steps.map((step, index) => (

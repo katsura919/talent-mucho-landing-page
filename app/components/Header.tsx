@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -16,16 +17,21 @@ export default function Header() {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-                    ? "bg-beige-50/95 backdrop-blur-md shadow-sm py-4"
-                    : "bg-transparent py-6"
+                ? "bg-beige-50/95 backdrop-blur-md shadow-sm py-2"
+                : "bg-transparent py-3"
                 }`}
         >
             <div className="section-container flex items-center justify-between">
                 {/* Logo */}
-                <a href="#" className="group flex items-center gap-2">
-                    <span className="text-2xl font-serif text-charcoal-900 tracking-tight">
-                        Talent<span className="text-clay-500">Mucho</span>
-                    </span>
+                <a href="#" className="group flex items-center">
+                    <Image
+                        src="/tm-logo.png"
+                        alt="Talent Mucho"
+                        width={100}
+                        height={30}
+                        className="h-14 w-auto object-contain"
+                        priority
+                    />
                 </a>
 
                 {/* Navigation */}
