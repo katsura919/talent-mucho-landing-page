@@ -131,43 +131,6 @@ export default async function BlogPostPage({ params }: Props) {
                     </div>
                 </section>
 
-                {/* Author & Share */}
-                <section className="py-12 bg-beige-50 border-t border-beige-200">
-                    <div className="section-container">
-                        <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-full bg-beige-200 flex items-center justify-center">
-                                    <span className="text-lg font-medium text-clay-500">
-                                        TM
-                                    </span>
-                                </div>
-                                <div>
-                                    <p className="font-medium text-espresso-800">
-                                        {post.author?.name || "Talent Mucho Team"}
-                                    </p>
-                                    <p className="text-sm text-taupe-400">
-                                        {post.author?.role || "Editorial"}
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <span className="text-sm text-taupe-400">
-                                    Share this article:
-                                </span>
-                                <button className="p-2 rounded-full bg-beige-100 text-espresso-700 hover:bg-beige-200 transition-colors">
-                                    <Twitter className="w-4 h-4" />
-                                </button>
-                                <button className="p-2 rounded-full bg-beige-100 text-espresso-700 hover:bg-beige-200 transition-colors">
-                                    <Linkedin className="w-4 h-4" />
-                                </button>
-                                <button className="p-2 rounded-full bg-beige-100 text-espresso-700 hover:bg-beige-200 transition-colors">
-                                    <Share2 className="w-4 h-4" />
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
                 {/* Related Posts */}
                 {relatedPosts.length > 0 && (
                     <section className="section-padding bg-beige-100">
