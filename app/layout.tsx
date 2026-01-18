@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
+import JsonLd from "./components/JsonLd";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -14,8 +15,16 @@ const inter = Inter({
   display: "swap",
 });
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://talentmucho.com";
+
 export const metadata: Metadata = {
-  title: "Talent Mucho | Build Your Team. Anywhere.",
+  metadataBase: new URL(baseUrl),
+
+  // Primary Meta Tags
+  title: {
+    default: "Talent Mucho | Build Your Team. Anywhere.",
+    template: "%s | Talent Mucho",
+  },
   description:
     "Talent Mucho is a boutique global talent studio helping companies build meaningful, distributed teams. Curated remote staffing, talent sourcing, and dedicated team members.",
   keywords: [
@@ -25,13 +34,78 @@ export const metadata: Metadata = {
     "talent sourcing",
     "remote hiring",
     "staffing agency",
+    "remote team building",
+    "virtual assistants",
+    "offshore staffing",
+    "talent acquisition",
+    "hire remote employees",
+    "global workforce solutions",
   ],
+  authors: [{ name: "Talent Mucho" }],
+  creator: "Talent Mucho",
+  publisher: "Talent Mucho",
+
+  // Robots
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  // Icons
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/tm-logo.png",
+  },
+
+  // Open Graph
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: baseUrl,
+    siteName: "Talent Mucho",
+    title: "Talent Mucho | Build Your Team. Anywhere.",
+    description:
+      "A boutique global talent studio helping companies build meaningful, distributed teams through curated remote staffing and talent sourcing.",
+    images: [
+      {
+        url: "/tm-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Talent Mucho - Global Talent Studio",
+      },
+    ],
+  },
+
+  // Twitter Card
+  twitter: {
+    card: "summary_large_image",
     title: "Talent Mucho | Build Your Team. Anywhere.",
     description:
       "A boutique global talent studio helping companies build meaningful, distributed teams.",
-    type: "website",
+    images: ["/tm-logo.png"],
+    creator: "@talentmucho",
   },
+
+  // Verification (add your verification codes here later)
+  // verification: {
+  //   google: "your-google-verification-code",
+  //   yandex: "your-yandex-verification-code",
+  // },
+
+  // Alternate languages (if you add multi-language support)
+  alternates: {
+    canonical: baseUrl,
+  },
+
+  // Category
+  category: "Business",
 };
 
 export default function RootLayout({
@@ -41,6 +115,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <JsonLd />
+      </head>
       <body className={`${playfair.variable} ${inter.variable}`}>
         {children}
       </body>
