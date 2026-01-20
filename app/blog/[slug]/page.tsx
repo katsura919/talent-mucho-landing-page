@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
     return blogPosts.map((post) => ({
         slug: post.id,
     }));
@@ -189,7 +189,7 @@ export default async function BlogPostPage({ params }: Props) {
                 )}
 
                 {/* CTA */}
-                <CTASection/>
+                <CTASection />
             </main>
         </>
     );

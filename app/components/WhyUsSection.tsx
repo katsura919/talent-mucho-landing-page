@@ -38,7 +38,7 @@ export default function WhyUsSection() {
                     </p>
                     <h2 className="mb-6">A partner, not a vendor</h2>
                     <p className="editorial-subheading">
-                        We position ourselves as an extension of your team—invested in your
+                        We position ourselves as an extension of your team, invested in your
                         success and committed to finding talent that truly fits.
                     </p>
                 </div>
