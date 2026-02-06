@@ -6,18 +6,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Static pages
     const staticPages: MetadataRoute.Sitemap = [
-        {
-            url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: 1.0,
-        },
-        {
-            url: `${baseUrl}/blog`,
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: 0.8,
-        },
+      {
+        url: baseUrl,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 1.0,
+      },
+      {
+        url: `https://talentmucho.vercel.app/blog`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.8,
+      },
     ];
 
     // Blog post pages
