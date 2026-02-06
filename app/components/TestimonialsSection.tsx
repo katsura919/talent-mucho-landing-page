@@ -7,7 +7,7 @@ import { Quote } from "lucide-react";
 export default function TestimonialsSection() {
     const testimonials = [
         {
-            quote: "Talent Mucho transformed how we build our team. Their candidates aren't just skilled—they truly understand our culture and values.",
+            quote: "Talent Mucho transformed how we build our team. Their candidates aren't just skilled, they truly understand our culture and values.",
             author: "Sarah Chen",
             role: "CEO",
             company: "Nexus Innovations",

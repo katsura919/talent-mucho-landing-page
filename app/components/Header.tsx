@@ -49,30 +49,33 @@ export default function Header() {
                 }`}
         >
             <div className="section-container flex items-center justify-between">
-                {/* Logo */}
-                <a href="/" className="group flex items-center">
-                    <Image
-                        src="/tm-logo.png"
-                        alt="Talent Mucho"
-                        width={100}
-                        height={30}
-                        className="h-14 w-auto object-contain"
-                        priority
-                    />
-                </a>
+                {/* Left Side: Logo + Navigation */}
+                <div className="flex items-center gap-10">
+                    {/* Logo */}
+                    <a href="/" className="group flex items-center">
+                        <Image
+                            src="/tm-logo.png"
+                            alt="Talent Mucho"
+                            width={100}
+                            height={30}
+                            className="h-14 w-auto object-contain"
+                            priority
+                        />
+                    </a>
 
-                {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center gap-8">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            className="text-sm text-espresso-800 hover:text-clay-500 transition-colors"
-                        >
-                            {link.label}
-                        </a>
-                    ))}
-                </nav>
+                    {/* Desktop Navigation */}
+                    <nav className="hidden md:flex items-center gap-8">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                className="text-sm text-espresso-800 hover:text-clay-500 transition-colors"
+                            >
+                                {link.label}
+                            </a>
+                        ))}
+                    </nav>
+                </div>
 
                 {/* Desktop CTA */}
                 <a
