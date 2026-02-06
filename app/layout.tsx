@@ -20,6 +20,9 @@ const inter = Inter({
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://talentmucho.com";
 
 export const metadata: Metadata = {
+  verification: {
+    google: "H2MZOp8GTipHVn3XKvDrdnHd3gbh1I0LsMskzJ2GHOE",
+  },
   metadataBase: new URL(baseUrl),
 
   // Primary Meta Tags
@@ -117,6 +120,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
       <head>
         <JsonLd />
       </head>
