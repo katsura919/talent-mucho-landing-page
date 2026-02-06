@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Static pages
     const staticPages: MetadataRoute.Sitemap = [
       {
-        url: baseUrl,
+        url: `https://talentmucho.vercel.app/blog`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 1.0,
@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Blog post pages
     const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-        url: `${baseUrl}/blog/${post.id}`,
+        url: `https://talentmucho.vercel.app/blog/${post.id}`,
         lastModified: new Date(post.date),
         changeFrequency: "monthly" as const,
         priority: 0.6,
