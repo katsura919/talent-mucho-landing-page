@@ -13,7 +13,7 @@ export default function CTASection() {
     ];
 
     return (
-        <section id="contact" className="relative bg-charcoal-900 overflow-hidden">
+        <section id="contact" className="relative bg-charcoal-900 py-5 overflow-hidden">
             {/* Diagonal grid */}
             <div
                 className="absolute inset-0 opacity-[0.03]"
@@ -31,7 +31,7 @@ export default function CTASection() {
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-espresso-700/15 rounded-full blur-[80px] pointer-events-none" />
 
             {/* Content */}
-            <div className="section-container relative z-10 py-28 text-center">
+            <div className="section-container relative z-10 py-5 text-center">
                 {/* Eyebrow */}
                 <div className="flex items-center justify-center gap-4 mb-10">
                     <div className="h-px w-20 bg-gradient-to-r from-transparent to-taupe-400/30" />
@@ -55,12 +55,10 @@ export default function CTASection() {
                 </h2>
 
                 <p className="text-beige-200/60 text-lg max-w-xl mx-auto mb-12 leading-relaxed">
-                    Let&apos;s build your team, your systems, and your online presence — properly.
-                    No fluff, no wasted time.
+                    Let&apos;s build your team, your systems, and your online presence properly.
                 </p>
 
-                {/* Primary CTA */}
-                <div className="mb-14">
+                <div className="pb-10">
                     <a
                         href="https://calendly.com/talentmucho/30min"
                         target="_blank"
@@ -73,64 +71,24 @@ export default function CTASection() {
                     <p className="text-beige-200/40 text-xs mt-4">No commitment required · 30-minute session</p>
                 </div>
 
-                {/* Social Links */}
-                <div className="flex items-center justify-center gap-5 mb-8">
-                    {socialLinks.map((social, i) => {
-                        const Icon = social.icon;
-                        return (
-                            <div key={social.name} className="flex items-center gap-5">
-                                <a
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label={social.name}
-                                    className="text-beige-200/40 hover:text-beige-50 transition-colors duration-300"
-                                >
-                                    <Icon className="w-5 h-5" />
-                                </a>
-                                {i < socialLinks.length - 1 && (
-                                    <div className="h-4 w-px bg-beige-200/10" />
-                                )}
-                            </div>
-                        );
-                    })}
-                </div>
-
-                {/* Email */}
-                <a
-                    href="mailto:hello@talentmucho.com"
-                    className="text-beige-200/40 hover:text-beige-50 transition-colors duration-300 text-sm"
-                >
-                    hello@talentmucho.com
-                </a>
-
-                {/* Footer row */}
-                <div className="mt-16 pt-8 border-t border-beige-200/10">
-                    <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-6">
+                {/* Footer Minimal Row */}
+                <div className="border-t border-beige-200/10">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                         {/* Locations */}
-                        <div className="text-left order-2 md:order-1">
-                            <p className="text-[10px] uppercase tracking-widest text-taupe-400/60 mb-2">Locations</p>
+                        <div className="text-center md:text-left pt-3">
                             <p className="text-sm text-beige-200/50">Granada, Spain</p>
                             <p className="text-sm text-beige-200/50">Cagayan de Oro City, Philippines</p>
                         </div>
 
-                        {/* Logo */}
-                        <div className="flex justify-center order-1 md:order-2">
-                            <Image
-                                src="/tm-logo.png"
-                                alt="Talent Mucho"
-                                width={130}
-                                height={46}
-                                className="h-9 w-auto object-contain brightness-0 invert opacity-70"
-                            />
-                        </div>
-
-                        {/* Copyright */}
-                        <div className="text-right order-3">
-                            <p className="text-sm text-beige-200/30">
-                                © {new Date().getFullYear()} Talent Mucho.
-                                <br />
-                                All rights reserved.
+                        {/* Copyright & Legal */}
+                        <div className="text-center md:text-right">
+                            <div className="flex items-center justify-center md:justify-end gap-3 text-xs text-beige-200/50">
+                                <a href="/terms-of-service" className="hover:text-beige-50 transition-colors">Terms of Service</a>
+                                <span className="text-beige-200/20">•</span>
+                                <a href="/privacy-policy" className="hover:text-beige-50 transition-colors">Privacy Policy</a>
+                            </div>
+                            <p className="text-sm text-beige-200/30 ">
+                                © {new Date().getFullYear()} Talent Mucho. All rights reserved.
                             </p>
                         </div>
                     </div>
