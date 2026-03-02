@@ -1,88 +1,152 @@
-"use client";
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Card, CardContent } from '@/components/ui/card'
 
-import Image from "next/image";
-import { Quote } from "lucide-react";
+type Testimonial = {
+    name: string
+    role: string
+    image: string
+    quote: string
+}
 
-export default function TestimonialsSection() {
-    const testimonials = [
-        {
-            quote: "Talent Mucho transformed how we build our team. Their candidates aren't just skilled — they truly understand our culture and values. Game-changing.",
-            author: "Sarah Chen",
-            role: "CEO",
-            company: "Nexus Innovations",
-            avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
-        },
-        {
-            quote: "The level of care and attention they put into understanding our needs was remarkable. We found our perfect senior developer in just two weeks.",
-            author: "Michael Torres",
-            role: "CTO",
-            company: "Streamline Tech",
-            avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-        },
-        {
-            quote: "Working with Talent Mucho feels like having an extension of our own HR team. They've placed 12 team members with us — each one exceptional.",
-            author: "Emily Watson",
-            role: "Head of Operations",
-            company: "GrowthPath Co.",
-            avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
-        },
-    ];
+const testimonials: Testimonial[] = [
+    {
+        name: 'Jonathan Yombo',
+        role: 'Business Coach',
+        image: 'https://randomuser.me/api/portraits/men/1.jpg',
+        quote: 'Talent Mucho completely transformed how I run my coaching business. Finding a reliable VA who understood my industry was a game-changer.',
+    },
+    {
+        name: 'Yves Kalume',
+        role: 'Founder, Tech Solutions',
+        image: 'https://randomuser.me/api/portraits/men/6.jpg',
+        quote: 'We needed a highly-skilled developer fast, and they delivered. The vetting process is incredible. We saved weeks of recruitment headaches.',
+    },
+    {
+        name: 'Yucel Faruksahan',
+        role: 'E-commerce Entrepreneur',
+        image: 'https://randomuser.me/api/portraits/men/7.jpg',
+        quote: 'From customer support to inventory management, the remote talent I hired through Talent Mucho has allowed me to finally step back and focus on scaling my brand.',
+    },
+    {
+        name: 'Anonymous author',
+        role: 'Startup Founder',
+        image: 'https://randomuser.me/api/portraits/men/8.jpg',
+        quote: 'I was hesitant about building a remote team, but Talent Mucho made it seamless. They handled everything, and the talent quality exceeded my expectations by miles.',
+    },
+    {
+        name: 'Shekinah Tshiokufila',
+        role: 'Creative Agency Owner',
+        image: 'https://randomuser.me/api/portraits/men/4.jpg',
+        quote: 'Hiring a specialized marketing assistant through them gave my agency the breathing room to take on three new enterprise clients this quarter. Absolute lifesavers.',
+    },
+    {
+        name: 'Oketa Fred',
+        role: 'Real Estate Investor',
+        image: 'https://randomuser.me/api/portraits/men/2.jpg',
+        quote: 'I absolutely love the onboarding process! They found me an Executive Assistant who manages my entire calendar, lead flow, and inbox flawlessly.',
+    },
+    {
+        name: 'Zeki',
+        role: 'SaaS Founder',
+        image: 'https://randomuser.me/api/portraits/men/5.jpg',
+        quote: "Partnering with Talent Mucho has been like unlocking a secret scaling superpower. The tech talent they source is top-tier and their support is unmatched.",
+    },
+    {
+        name: 'Joseph Kitheka',
+        role: 'Marketing Consultant',
+        image: 'https://randomuser.me/api/portraits/men/9.jpg',
+        quote: 'Talent Mucho has transformed the way I delegate. Have a dedicated designer and copywriter on my team has significantly accelerated my workflow and client delivery.',
+    },
+    {
+        name: 'Khatab Wedaa',
+        role: 'Solopreneur',
+        image: 'https://randomuser.me/api/portraits/men/10.jpg',
+        quote: "It's an elegant, clean, and highly responsive service. If you're a solopreneur trying to do it all, stop right now and book a call with this team.",
+    },
+    {
+        name: 'Rodrigo Aguilar',
+        role: 'Content Creator',
+        image: 'https://randomuser.me/api/portraits/men/11.jpg',
+        quote: 'I love Talent Mucho ❤️. Having a dedicated video editor and social media manager has allowed me to focus purely on content creation. It makes growing an audience so much easier.',
+    },
+    {
+        name: 'Eric Ampire',
+        role: 'Fitness Coach',
+        image: 'https://randomuser.me/api/portraits/men/12.jpg',
+        quote: 'They are the perfect solution for anyone who wants to scale without the stress of traditional hiring. My client management is now fully automated thanks to my remote team.',
+    },
+    {
+        name: 'Roland Tubonge',
+        role: 'Financial Advisor',
+        image: 'https://randomuser.me/api/portraits/men/13.jpg',
+        quote: 'The level of professionalism from the staff they place is incredible. My VA handles all client scheduling and onboarding perfectly. Let yourself be convinced!',
+    },
+]
 
+const chunkArray = (array: Testimonial[], chunkSize: number): Testimonial[][] => {
+    const result: Testimonial[][] = []
+    for (let i = 0; i < array.length; i += chunkSize) {
+        result.push(array.slice(i, i + chunkSize))
+    }
+    return result
+}
+
+const testimonialChunks = chunkArray(testimonials, Math.ceil(testimonials.length / 3))
+
+export default function WallOfLoveSection() {
     return (
-        <section id="testimonials" className="section-padding bg-beige-100">
-            <div className="section-container">
-                <div className="text-center mb-16">
+        <section id="testimonials" className="section-padding bg-beige-100 relative overflow-hidden">
+            <div className="section-container relative z-10 w-full">
+                <div className="mx-auto max-w-6xl text-center mb-16 md:mb-24">
                     <p className="text-clay-500 text-xs font-semibold uppercase tracking-[0.25em] mb-4">
                         What Clients Say
                     </p>
                     <h2
-                        style={{ fontFamily: "var(--font-cormorant)", fontWeight: 300 }}
-                        className="mb-5 text-4xl md:text-5xl"
+                        className="text-charcoal-900 mb-6 leading-[1.1]"
+                        style={{ fontFamily: "var(--font-cormorant)", fontWeight: 300, fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
                     >
-                        Trusted by growing teams
+                        Loved by the Community
                     </h2>
-                    <p className="text-espresso-800 text-lg max-w-xl mx-auto leading-relaxed">
-                        Hear from the companies we&apos;ve had the privilege to partner with on their journey to building exceptional teams.
+                    <p className="text-taupe-500 text-lg max-w-2xl mx-auto leading-relaxed">
+                        Hear from the professionals and companies we&apos;ve had the privilege to partner with on their journey.
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-6">
-                    {testimonials.map((t, i) => (
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {testimonialChunks.map((chunk, chunkIndex) => (
                         <div
-                            key={i}
-                            className="group bg-white rounded-3xl border border-beige-200 p-8 shadow-sm hover:shadow-md hover:border-clay-300 transition-all duration-500 flex flex-col justify-between"
-                        >
-                            <div className="mb-6">
-                                <div className="w-10 h-10 bg-clay-500/10 rounded-full flex items-center justify-center mb-5 group-hover:bg-clay-500 transition-colors duration-500">
-                                    <Quote className="w-4 h-4 text-clay-500 group-hover:text-white transition-colors duration-500" />
-                                </div>
-                                <p
-                                    className="text-charcoal-900 leading-relaxed text-lg"
-                                    style={{ fontFamily: "var(--font-cormorant)", fontStyle: "italic" }}
-                                >
-                                    &ldquo;{t.quote}&rdquo;
-                                </p>
-                            </div>
+                            key={chunkIndex}
+                            className="space-y-6">
+                            {chunk.map(({ name, role, quote, image }, index) => (
+                                <Card key={index} className="border border-beige-200/50 shadow-sm hover:shadow-md transition-shadow rounded-2xl">
+                                    <CardContent className="grid grid-cols-[auto_1fr] gap-4 pt-6 bg-white rounded-2xl">
+                                        <Avatar className="size-10 border border-beige-200/50">
+                                            <AvatarImage
+                                                alt={name}
+                                                src={image}
+                                                loading="lazy"
+                                                width="120"
+                                                height="120"
+                                            />
+                                            <AvatarFallback className="bg-clay-50/50 text-clay-600">TM</AvatarFallback>
+                                        </Avatar>
 
-                            <div className="pt-5 border-t border-beige-200 flex items-center gap-3">
-                                <Image
-                                    src={t.avatar}
-                                    alt={t.author}
-                                    width={44}
-                                    height={44}
-                                    className="w-11 h-11 rounded-full object-cover border-2 border-beige-200"
-                                />
-                                <div>
-                                    <p className="font-semibold text-charcoal-900 text-sm">{t.author}</p>
-                                    <p className="text-xs text-taupe-400">
-                                        {t.role}, {t.company}
-                                    </p>
-                                </div>
-                            </div>
+                                        <div>
+                                            <h3 className="font-semibold text-charcoal-900">{name}</h3>
+
+                                            <span className="text-taupe-400 block text-xs font-medium tracking-wide mt-0.5">{role}</span>
+
+                                            <blockquote className="mt-4">
+                                                <p className="text-taupe-500 text-sm leading-relaxed">&ldquo;{quote}&rdquo;</p>
+                                            </blockquote>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            ))}
                         </div>
                     ))}
                 </div>
             </div>
         </section>
-    );
+    )
 }

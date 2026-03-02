@@ -11,7 +11,6 @@ import WhyUsSection from "../components/WhyUsSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import BlogSection from "../components/BlogSection";
 import CTASection from "../components/CTASection";
-
 export default function Home() {
   return (
     <>
