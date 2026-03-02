@@ -2,6 +2,7 @@ import Hero from "../components/Hero";
 import ClientsSection from "../components/ClientsSection";
 import ChallengeSection from "../components/ChallengeSection";
 import WhoWeAreSection from "../components/WhoWeAreSection";
+import WebsiteServiceSection from "../components/WebsiteServiceSection";
 import ServicesSection from "../components/ServicesSection";
 import BenefitsSection from "../components/BenefitsSection";
 import ProcessSection from "../components/ProcessSection";
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <ClientsSection />
         <WhoWeAreSection />
+        <WebsiteServiceSection />
         <ServicesSection />
         <BenefitsSection />
         <ProcessSection />
