@@ -7,7 +7,7 @@ const steps = [
     {
         number: "01",
         title: "Discovery Call",
-        description: "We learn your goals, current gaps, and growth stage. No templates — just a real conversation about what you need.",
+        description: "We learn your goals, current gaps, and growth stage. No templates, just a real conversation about what you need.",
     },
     {
         number: "02",
@@ -17,7 +17,7 @@ const steps = [
     {
         number: "03",
         title: "Build & Launch",
-        description: "Your VA, systems, or digital assets go live — fast, without the chaos of managing it yourself.",
+        description: "Your VA, systems, or digital assets go live fast, without the chaos of managing it yourself.",
     },
     {
         number: "04",
