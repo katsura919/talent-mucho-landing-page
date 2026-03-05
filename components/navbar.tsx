@@ -190,7 +190,7 @@ export function Header() {
                     "rounded-full h-8 font-medium text-espresso-800 bg-transparent hover:bg-beige-100 px-4"
                   )}
                 >
-                  <Link href="https://calendly.com/talentmucho/30min" target="_blank">Contact</Link>
+                  <Link href="/booking">Contact</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -199,9 +199,7 @@ export function Header() {
         <div className="flex items-center gap-4">
           <div className="hidden lg:block">
             <a
-              href="https://calendly.com/talentmucho/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/booking"
               className="btn-primary text-sm py-2 px-6 rounded-full"
             >
               Book a Call
@@ -305,9 +303,7 @@ export function Header() {
 
               <div className="p-6 border-t border-beige-200/50 bg-white shrink-0">
                 <a
-                  href="https://calendly.com/talentmucho/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/booking"
                   className="flex items-center justify-center w-full py-4 bg-charcoal-900 text-beige-50 font-medium rounded-xl shadow-lg hover:bg-clay-600 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
