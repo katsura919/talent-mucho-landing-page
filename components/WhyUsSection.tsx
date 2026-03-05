@@ -13,7 +13,7 @@ const points = [
   {
     title: "Strategy + Execution",
     icon: Zap,
-    description: "We don't just follow tasks — we help you plan the roadmap, then we build it. Expert advice paired with precision implementation.",
+    description: "We don't just follow tasks, we help you plan the roadmap, then we build it. Expert advice paired with precision implementation.",
   },
   {
     title: "Flexible & Scalable",

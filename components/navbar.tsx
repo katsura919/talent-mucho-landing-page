@@ -67,6 +67,7 @@ const ourStudio: {
   icon: ReactElement;
   href: string;
   description: string;
+  isService?: boolean;
 }[] = [
     {
       title: "Services",
@@ -85,6 +86,34 @@ const ourStudio: {
       href: "/#why-us",
       icon: <Shield strokeWidth={2} />,
       description: "Global talent studio with a boutique approach.",
+    },
+    {
+      title: "Virtual Assistants",
+      href: "/services/virtual-assistants",
+      icon: <BriefcaseBusiness strokeWidth={2} />,
+      description: "Trained, vetted VAs matched to your business goals.",
+      isService: true,
+    },
+    {
+      title: "Personal Branding",
+      href: "/services/personal-branding",
+      icon: <Sparkles strokeWidth={2} />,
+      description: "Authority-building content and profile strategy.",
+      isService: true,
+    },
+    {
+      title: "Marketing & Strategy",
+      href: "/services/marketing",
+      icon: <ChartNoAxesColumnIncreasing strokeWidth={2} />,
+      description: "Brand positioning, social media, and SEO.",
+      isService: true,
+    },
+    {
+      title: "Websites & Pages",
+      href: "/services/websites",
+      icon: <AppWindow strokeWidth={2} />,
+      description: "Conversion-focused sites and custom web systems.",
+      isService: true,
     },
   ];
 
@@ -144,18 +173,35 @@ export function Header() {
                   Our Studio
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-white border-beige-200 shadow-xl">
-                  <ul className="grid w-[400px] p-4 gap-3 grid-cols-1 md:w-[500px] md:grid-cols-2">
-                    {ourStudio.map((component) => (
-                      <ListItem
-                        key={component.title}
-                        title={component.title}
-                        icon={component.icon}
-                        href={component.href}
-                      >
-                        {component.description}
-                      </ListItem>
-                    ))}
-                  </ul>
+                  <div className="w-[540px] p-4">
+                    <ul className="grid grid-cols-2 gap-2 mb-3">
+                      {ourStudio.filter(c => !c.isService).map((component) => (
+                        <ListItem
+                          key={component.title}
+                          title={component.title}
+                          icon={component.icon}
+                          href={component.href}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                    <div className="border-t border-beige-100 pt-3">
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-taupe-400 px-2 mb-2">Our Services</p>
+                      <ul className="grid grid-cols-2 gap-2">
+                        {ourStudio.filter(c => c.isService).map((component) => (
+                          <ListItem
+                            key={component.title}
+                            title={component.title}
+                            icon={component.icon}
+                            href={component.href}
+                          >
+                            {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>

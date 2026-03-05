@@ -10,7 +10,7 @@ export default function WhoWeAreSection() {
         {
             icon: Rocket,
             title: "Strategic Execution",
-            description: "We don&apos;t just do tasks — we implement strategies that accelerate growth.",
+            description: "We don&apos;t just do tasks, we implement strategies that accelerate growth.",
         },
         {
             icon: ShieldCheck,

@@ -76,13 +76,13 @@ export default function CTASection() {
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                         {/* Locations */}
                         <div className="text-center md:text-left pt-3">
-                            <p className="text-sm text-beige-200/50">Granada, Spain</p>
+                            <p className="text-sm text-beige-200/50">Madrid, Spain</p>
                             <p className="text-sm text-beige-200/50">Cagayan de Oro City, Philippines</p>
                         </div>
 
                         {/* Copyright & Legal */}
                         <div className="text-center md:text-right">
-                            <div className="flex items-center justify-center md:justify-end gap-3 text-xs text-beige-200/50">
+                            <div className="flex items-center justify-center md:justify-end gap-3 text-xm text-beige-200/50">
                                 <a href="/terms-of-service" className="hover:text-beige-50 transition-colors">Terms of Service</a>
                                 <span className="text-beige-200/20">•</span>
                                 <a href="/privacy-policy" className="hover:text-beige-50 transition-colors">Privacy Policy</a>

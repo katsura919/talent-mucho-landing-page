@@ -8,12 +8,12 @@ const benefits = [
   {
     icon: Zap,
     title: "Built-in Efficiency",
-    description: "Automate repetitive workflows and streamline operations with trained VAs who know business systems inside-out — saving you hours every single day.",
+    description: "Automate repetitive workflows and streamline operations with trained VAs who know business systems inside-out, saving you hours every single day.",
   },
   {
     icon: Brain,
     title: "Smarter Decisions",
-    description: "Strategic guidance, not just task execution — a team that thinks with you to make data-informed choices.",
+    description: "Strategic guidance, not just task execution, a team that thinks with you to make data-informed choices.",
   },
   {
     icon: TrendingUp,
@@ -23,12 +23,12 @@ const benefits = [
   {
     icon: Clock,
     title: "Your Time Back",
-    description: "Let our team handle the heavy lifting so you can focus on what only you can do — leading, growing, and building the business you envisioned.",
+    description: "Let our team handle the heavy lifting so you can focus on what only you can do, leading, growing, and building the business you envisioned.",
   },
   {
     icon: Layers,
     title: "Scales With You",
-    description: "Packages adapt as your business evolves — no lock-in, no friction, pure flexibility to match your current needs.",
+    description: "Packages adapt as your business evolves, no lock-in, no friction, pure flexibility to match your current needs.",
   },
 ];
 
@@ -114,7 +114,7 @@ export default function BenefitsSection() {
               <em className="text-clay-500" style={{ fontStyle: "italic" }}>Talent Mucho</em>
             </h2>
             <p className="text-espresso-800 text-lg leading-relaxed mb-10">
-              Human expertise, strategic systems, and a team that actually cares about your outcomes. We don't just execute tasks — we engineer your freedom.
+              Human expertise, strategic systems, and a team that actually cares about your outcomes. We don't just execute tasks, we engineer your freedom.
             </p>
 
             <a

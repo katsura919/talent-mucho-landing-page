@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import JsonLd from "../components/JsonLd";
 import { Header } from "../components/navbar";
-import Hero from "../components/Hero";
+import CTASection from "@/components/CTASection";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -134,6 +134,7 @@ export default function RootLayout({
       <body className={`${cormorant.variable} ${manrope.variable}`}>
         <Header />
         {children}
+        <CTASection />
         <Analytics />
         <SpeedInsights />
       </body>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Link from "next/link";
 import {
     UserCheck,
     Cpu,
@@ -22,16 +23,18 @@ const services = [
         id: "va",
         title: "Virtual Assistants",
         subtitle: "Done Right",
-        description: "Not just task-doers. We place trained, vetted VAs who understand business goals — not just to-do lists.",
+        description: "Not just task-doers. We place trained, vetted VAs who understand business goals, not just to-do lists.",
         icon: UserCheck,
-        className: "lg:col-span-8 lg:row-span-2 bg-white",
+        spanClass: "lg:col-span-8 lg:row-span-2",
+        className: "bg-white",
         features: [
             "Executive & Admin VAs",
             "Customer Support",
             "Operations & Back-Office",
             "CRM & Automation"
         ],
-        details: "Skills-matched hiring — not guesswork."
+        details: "Skills-matched hiring, not guesswork.",
+        href: "/services/virtual-assistants"
     },
     {
         id: "branding",
@@ -39,13 +42,15 @@ const services = [
         subtitle: "Authority & Influence",
         description: "Build a compelling personal brand that establishes authority and drives meaningful connections.",
         icon: TrendingUp,
-        className: "lg:col-span-4 lg:row-span-2 bg-charcoal-900 text-beige-50 border-charcoal-800",
+        spanClass: "lg:col-span-4 lg:row-span-2",
+        className: "bg-charcoal-900 text-beige-50 border-charcoal-800",
         features: [
             "Content Strategy",
             "Profile Optimization",
             "Thought Leadership",
             "Audience Growth"
-        ]
+        ],
+        href: "/services/personal-branding"
     },
     {
         id: "marketing",
@@ -53,8 +58,10 @@ const services = [
         subtitle: "Visibility & Growth",
         description: "Turn founders into authorities with targeted execution and strategic brand positioning.",
         icon: Share2,
-        className: "lg:col-span-6 bg-white",
-        features: ["Brand Positioning", "SMM & Engagement", "SEO & Visibility"]
+        spanClass: "lg:col-span-6",
+        className: "bg-white",
+        features: ["Brand Positioning", "SMM & Engagement", "SEO & Visibility"],
+        href: "/services/marketing"
     },
     {
         id: "web",
@@ -62,8 +69,10 @@ const services = [
         subtitle: "Digital Storefronts",
         description: "Conversion-focused designs that look good and work hard for your brand's growth.",
         icon: LayoutTemplate,
-        className: "lg:col-span-6 bg-white",
-        features: ["Custom Web Design", "LP Optimization", "Speed & Mobile First"]
+        spanClass: "lg:col-span-6",
+        className: "bg-white",
+        features: ["Custom Web Design", "LP Optimization", "Speed & Mobile First"],
+        href: "/services/websites"
     }
 ];
 
@@ -91,7 +100,7 @@ export default function ServicesSection() {
                         <em className="text-clay-500" style={{ fontStyle: "italic" }}>Without the Overhead</em>
                     </h2>
                     <p className="text-espresso-800 text-lg max-w-2xl mx-auto leading-relaxed">
-                        We provide everything you need to scale — from skilled virtual professionals to comprehensive digital strategies that drive real results.
+                        We provide everything you need to scale, from skilled virtual professionals to comprehensive digital strategies that drive real results.
                     </p>
                 </motion.div>
 
@@ -111,9 +120,7 @@ export default function ServicesSection() {
                     className="mt-24 text-center"
                 >
                     <a
-                        href="https://calendly.com/talentmucho/30min"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="/booking"
                         className="inline-flex items-center gap-3 px-10 py-5 bg-charcoal-900 text-beige-50 font-medium rounded-full shadow-2xl hover:bg-clay-600 hover:shadow-clay-500/20 hover:-translate-y-1 transition-all duration-500 group"
                     >
                         Book a Free Strategy Call
@@ -126,10 +133,11 @@ export default function ServicesSection() {
 }
 
 function ServiceCard({ service, index }: { service: any; index: number }) {
+    const isLink = Boolean(service.href);
     const Icon = service.icon;
     const isDark = service.id === "branding";
 
-    return (
+    const cardContent = (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -138,6 +146,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
             className={cn(
                 "group relative rounded-[2.5rem] p-8 md:p-10 border transition-all duration-700 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1",
                 isDark ? "hover:border-clay-500/50" : "border-beige-200 hover:border-clay-300",
+                isLink ? "cursor-pointer" : "",
                 service.className
             )}
         >
@@ -220,5 +229,13 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
                 </div>
             )}
         </motion.div>
+    );
+
+    return isLink ? (
+        <Link href={service.href} className={cn(service.spanClass)}>
+            {cardContent}
+        </Link>
+    ) : (
+        cardContent
     );
 }
