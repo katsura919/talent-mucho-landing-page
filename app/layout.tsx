@@ -132,7 +132,7 @@ export default function RootLayout({
         <JsonLd />
       </head>
       <body className={`${cormorant.variable} ${manrope.variable}`}>
-        {/* <Header /> */}
+        <Header />
         {children}
         {/* <CTASection /> */}
         <Analytics />
