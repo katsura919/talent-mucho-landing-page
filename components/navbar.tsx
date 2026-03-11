@@ -146,7 +146,7 @@ export function Header() {
 
   return (
     <div
-      className={`fixed px-4 py-3 z-50 top-0 w-full transition-all duration-300 ${scrolled ? "bg-white border-b border-beige-200 py-1" : "bg-transparent py-2"
+      className={`fixed px-4 py-3 z-50 top-0 w-full transition-all duration-300 ${scrolled ? "bg-white" : "bg-transparent py-2"
         }`}
     >
       <div className="flex items-center justify-between w-full mx-auto max-w-7xl">
