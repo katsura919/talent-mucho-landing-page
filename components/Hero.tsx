@@ -66,9 +66,7 @@ export default function Hero() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-start gap-4 opacity-0 animate-fade-in-up animation-delay-400">
               <a
-                href="https://calendly.com/talentmucho/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/booking"
                 className="btn-primary"
               >
                 Book a Free Strategy Call
@@ -88,7 +86,7 @@ export default function Hero() {
               {/* Person Image */}
               <div className="relative z-10 animate-fade-in-up">
                 <Image
-                  src="/hero-person.png"
+                  src="/assets/website-samples/hero_image.png"
                   alt="Professional talent consultant"
                   width={400}
                   height={480}
@@ -113,7 +111,7 @@ export default function Hero() {
               </div>
 
               {/* Floating Card - Talent Stats */}
-              <div className="absolute top-1/3 -left-4 lg:-left-12 z-20 opacity-0 animate-fade-in-up animation-delay-400">
+              <div className="absolute top-1/2 -left-4 lg:-left-12 z-20 opacity-0 animate-fade-in-up animation-delay-400">
                 <div className="bg-beige-50 px-4 py-3 rounded-xl shadow-lg border border-beige-200">
                   <div className="flex items-center gap-2 mb-1">
                     <div className="w-8 h-8 rounded-full bg-beige-200 flex items-center justify-center">
