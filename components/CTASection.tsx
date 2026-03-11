@@ -60,9 +60,7 @@ export default function CTASection() {
 
                 <div className="pb-10">
                     <a
-                        href="https://calendly.com/talentmucho/30min"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="/booking"
                         className="inline-flex items-center gap-2 px-10 py-5 bg-beige-50 text-charcoal-900 font-semibold text-base rounded-xl shadow-xl hover:bg-beige-100 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out"
                     >
                         Book a Free Strategy Call
