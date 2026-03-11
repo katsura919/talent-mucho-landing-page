@@ -224,18 +224,34 @@ function OffersPackages() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-gradient-to-r from-clay-500/10 to-clay-300/10 border border-clay-500/20 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-6"
+          className="bg-gradient-to-r from-clay-500/10 to-clay-300/10 border border-clay-500/20 rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12 relative overflow-hidden shadow-xl"
         >
-          <div className="w-16 h-16 shrink-0 bg-clay-500 text-beige-50 rounded-2xl flex items-center justify-center shadow-lg">
-            <Gift className="w-8 h-8" />
+          <div className="w-20 h-20 shrink-0 bg-clay-500 text-beige-50 rounded-2xl flex items-center justify-center shadow-lg relative z-10 hidden sm:flex">
+            <Gift className="w-10 h-10" />
           </div>
-          <div className="text-center md:text-left">
-            <h4 className="text-2xl text-charcoal-900 mb-2" style={{ fontFamily: "var(--font-cormorant)", fontWeight: 600 }}>
+          <div className="text-center md:text-left flex-grow relative z-10">
+            <span className="inline-block border border-clay-500 text-clay-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
+              ✨ The Ultimate Growth Bundle
+            </span>
+            <h4 className="text-3xl md:text-4xl text-charcoal-900 mb-2" style={{ fontFamily: "var(--font-cormorant)", fontWeight: 600 }}>
               Stack Both Offers & Save
             </h4>
-            <p className="text-espresso-800 text-sm leading-relaxed max-w-3xl">
-              Get your website + GHL setup <strong className="text-clay-600 font-semibold">AND</strong> a dedicated Virtual Assistant for a total of just <strong className="text-clay-600 font-semibold">$1089 first month</strong>. Everything you need to launch, automate, and delegate in one move. Ask us about the bundle when you book your call.
+            <div className="flex items-baseline justify-center md:justify-start gap-3 mb-4">
+              <span className="text-5xl font-reg text-clay-600" style={{ fontFamily: "var(--font-cormorant)" }}>$999</span>
+              <span className="text-taupe-400 text-sm line-through decoration-clay-500/50">$1,089</span>
+              <span className="text-espresso-800 text-sm font-medium">first month</span>
+            </div>
+            <p className="text-espresso-800 text-sm md:text-base leading-relaxed max-w-2xl mb-6 md:mb-0">
+              Get your website + 3 Months free GHL setup <strong className="text-clay-600 font-semibold">AND</strong> a dedicated Virtual Assistant for just <strong className="text-clay-600 font-semibold">$999</strong>. Everything you need to launch, automate, and delegate in one move.
             </p>
+          </div>
+          <div className="shrink-0 w-full md:w-auto relative z-10">
+            <a
+              href="/booking"
+              className="flex items-center justify-center py-4 px-10 bg-clay-500 text-beige-50 font-medium rounded-full hover:bg-clay-400 transition-colors w-full whitespace-nowrap shadow-lg shadow-clay-500/30"
+            >
+              Claim Bundle <ArrowRight className="w-5 h-5 ml-2" />
+            </a>
           </div>
         </motion.div>
       </div>
