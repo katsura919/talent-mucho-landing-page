@@ -247,7 +247,7 @@ export function Header() {
                     "rounded-full h-8 font-medium text-espresso-800 bg-transparent hover:bg-beige-100 px-4"
                   )}
                 >
-                  <Link href="/offers">Offers</Link>
+                  <Link href="/offers">Limited Offers</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>

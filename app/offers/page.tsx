@@ -17,7 +17,6 @@ export default function OffersPage() {
       <OffersPackages />
       <OffersProcess />
       <OffersFAQ />
-      <OffersTestimonials />
       <CTASection />
     </main>
   );
