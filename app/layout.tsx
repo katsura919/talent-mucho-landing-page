@@ -22,7 +22,7 @@ const manrope = Manrope({
   display: "swap",
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://talentmucho.com";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.talentmucho.com";
 
 export const metadata: Metadata = {
   verification: {
