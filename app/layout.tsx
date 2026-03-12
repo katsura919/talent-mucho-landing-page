@@ -138,7 +138,7 @@ export default function RootLayout({
           <Header />
         </div>
         {children}
-        {/* <CTASection /> */}
+        <CTASection /> 
         <Analytics />
         <SpeedInsights />
       </body>
