@@ -8,7 +8,7 @@ const WEBSITE_PROJECTS: FocusRailItem[] = [
         description: "The DIY System for Spain's Digital Nomad Visa.",
         meta: "Digital Nomad • Travel",
         imageSrc: "https://res.cloudinary.com/drpxke63n/image/upload/v1772444270/happy.png",
-        href: "#eco-store",
+        href: "https://www.happyvoyager.com/",
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ const WEBSITE_PROJECTS: FocusRailItem[] = [
         description: "Own Your Life. Reclaim Your Authority. Begin Again-On Your Terms.",
         meta: "Personal Brand • Coaching",
         imageSrc: "https://res.cloudinary.com/drpxke63n/image/upload/v1772444675/genx_wj4doa.png",
-        href: "#exec-port",
+        href: "https://www.genxauthoritymentor.com/",
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const WEBSITE_PROJECTS: FocusRailItem[] = [
         description: "Empowering the Digital-First World with AI-Driven Virtual Assistant.",
         meta: "Virtual Assistant • AI",
         imageSrc: "https://res.cloudinary.com/drpxke63n/image/upload/v1772445050/avsph_dabzkj.png",
-        href: "#tech-launch",
+        href: "https://advancedvirtualstaff.com/",
     },
 ];
 

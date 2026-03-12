@@ -126,9 +126,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta
-          name="google-site-verification"
-          content="H2MZOp8GTipHVn3XKvDrdnHd3gbh1I0LsMskzJ2GHOE"
+        <meta 
+          name="google-site-verification" 
+          content="awB_HDh_Zlgw-k74MrU5hfXHWCSxowY5l5Ds3yC5Afk" 
         />
         <JsonLd />
       </head>
