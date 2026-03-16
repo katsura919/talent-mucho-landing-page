@@ -57,6 +57,7 @@ import {
 } from "@aliimam/icons";
 import { Button } from "@/components/ui/button";
 import { useState, useCallback, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 
@@ -134,6 +135,8 @@ const insights: {
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentHash, setCurrentHash] = useState("");
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -143,6 +146,23 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const updateHash = () => setCurrentHash(window.location.hash);
+    updateHash();
+    window.addEventListener("hashchange", updateHash);
+    return () => window.removeEventListener("hashchange", updateHash);
+  }, [pathname]);
+
+  const isActiveHref = (href: string) => {
+    if (!href) return false;
+    const [path, hash] = href.split("#");
+    if (hash) {
+      return pathname === path && currentHash === `#${hash}`;
+    }
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
 
   return (
     <div
@@ -181,6 +201,7 @@ export function Header() {
                           title={component.title}
                           icon={component.icon}
                           href={component.href}
+                          isActive={isActiveHref(component.href)}
                         >
                           {component.description}
                         </ListItem>
@@ -195,6 +216,7 @@ export function Header() {
                             title={component.title}
                             icon={component.icon}
                             href={component.href}
+                            isActive={isActiveHref(component.href)}
                           >
                             {component.description}
                           </ListItem>
@@ -221,6 +243,7 @@ export function Header() {
                         title={component.title}
                         icon={component.icon}
                         href={component.href}
+                        isActive={isActiveHref(component.href)}
                       >
                         {component.description}
                       </ListItem>
@@ -233,7 +256,8 @@ export function Header() {
                   asChild
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    "rounded-full h-8 font-medium text-espresso-800 bg-transparent hover:bg-beige-100 px-4"
+                    "rounded-full h-8 font-medium bg-transparent hover:bg-beige-100 px-4",
+                    isActiveHref("/contact") ? "text-white" : "text-espresso-800"
                   )}
                 >
                   <Link href="/contact">Contact</Link>
@@ -244,7 +268,8 @@ export function Header() {
                   asChild
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    "rounded-full h-8 font-medium text-espresso-800 bg-transparent hover:bg-beige-100 px-4"
+                    "rounded-full h-8 font-medium bg-transparent hover:bg-beige-100 px-4",
+                    isActiveHref("/offers") ? "text-white" : "text-espresso-800"
                   )}
                 >
                   <Link href="/offers">Limited Offers</Link>
@@ -327,8 +352,26 @@ export function Header() {
                           {React.cloneElement(item.icon as React.ReactElement<any>, { className: "w-4 h-4" })}
                         </div>
                         <div>
-                          <div className="font-medium text-charcoal-900">{item.title}</div>
-                          <div className="text-xs text-taupe-500 mt-1 leading-relaxed">{item.description}</div>
+                          <div
+                            className={cn(
+                              "font-medium",
+                              isActiveHref(item.href)
+                                ? "text-white"
+                                : "text-charcoal-900"
+                            )}
+                          >
+                            {item.title}
+                          </div>
+                          <div
+                            className={cn(
+                              "text-xs mt-1 leading-relaxed",
+                              isActiveHref(item.href)
+                                ? "text-white"
+                                : "text-taupe-500"
+                            )}
+                          >
+                            {item.description}
+                          </div>
                         </div>
                       </Link>
                     ))}
@@ -349,8 +392,26 @@ export function Header() {
                           {React.cloneElement(item.icon as React.ReactElement<any>, { className: "w-4 h-4" })}
                         </div>
                         <div>
-                          <div className="font-medium text-charcoal-900">{item.title}</div>
-                          <div className="text-xs text-taupe-500 mt-1 leading-relaxed">{item.description}</div>
+                          <div
+                            className={cn(
+                              "font-medium",
+                              isActiveHref(item.href)
+                                ? "text-white"
+                                : "text-charcoal-900"
+                            )}
+                          >
+                            {item.title}
+                          </div>
+                          <div
+                            className={cn(
+                              "text-xs mt-1 leading-relaxed",
+                              isActiveHref(item.href)
+                                ? "text-white"
+                                : "text-taupe-500"
+                            )}
+                          >
+                            {item.description}
+                          </div>
                         </div>
                       </Link>
                     ))}
@@ -380,10 +441,12 @@ function ListItem({
   icon,
   children,
   href,
+  isActive,
   ...props
 }: React.ComponentPropsWithoutRef<"li"> & {
   href: string;
   icon: ReactElement;
+  isActive?: boolean;
 }) {
   return (
     <li {...props}>
@@ -392,8 +455,20 @@ function ListItem({
           <div className="flex gap-3 items-start rounded-md p-2">
             <div className="border rounded-sm p-2 icon-container">{icon}</div>
             <div className="text-container">
-              <div className="text-sm font-medium leading-none">{title}</div>
-              <p className="text-muted-foreground line-clamp-2 pt-1 text-xs leading-snug">
+              <div
+                className={cn(
+                  "text-sm font-medium leading-none",
+                  isActive ? "text-white" : undefined
+                )}
+              >
+                {title}
+              </div>
+              <p
+                className={cn(
+                  "line-clamp-2 pt-1 text-xs leading-snug",
+                  isActive ? "text-white" : "text-muted-foreground"
+                )}
+              >
                 {children}
               </p>
             </div>
