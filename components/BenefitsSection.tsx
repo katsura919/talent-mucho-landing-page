@@ -1,6 +1,4 @@
 "use client";
-
-import { motion } from "motion/react";
 import { Zap, Brain, TrendingUp, Clock, Layers, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -45,12 +43,8 @@ export default function BenefitsSection() {
               const isDark = index === 0 || index === 3;
 
               return (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   className={cn(
                     "group rounded-[2rem] p-8 md:p-10 border transition-all duration-500 relative overflow-hidden",
                     isDark
@@ -90,19 +84,13 @@ export default function BenefitsSection() {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
 
           {/* Sticky Sidebar */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="lg:w-1/3 lg:sticky lg:top-32 h-fit order-first lg:order-last mb-12 lg:mb-0"
-          >
+          <div className="lg:w-1/3 lg:sticky lg:top-32 h-fit order-first lg:order-last mb-12 lg:mb-0">
             <p className="text-clay-500 text-xs font-semibold uppercase tracking-[0.25em] mb-4">
               The Difference
             </p>
@@ -126,7 +114,7 @@ export default function BenefitsSection() {
               Explore Our Plans
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

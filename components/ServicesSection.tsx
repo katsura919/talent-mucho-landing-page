@@ -1,6 +1,4 @@
 "use client";
-
-import { motion } from "motion/react";
 import Link from "next/link";
 import {
     UserCheck,
@@ -81,13 +79,7 @@ export default function ServicesSection() {
         <section id="services" className="section-padding bg-beige-100 overflow-hidden">
             <div className="section-container">
                 {/* Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-20"
-                >
+                <div className="text-center mb-20">
                     <p className="text-clay-500 text-xs font-semibold uppercase tracking-[0.25em] mb-4">
                         What We Offer
                     </p>
@@ -102,23 +94,17 @@ export default function ServicesSection() {
                     <p className="text-espresso-800 text-lg max-w-2xl mx-auto leading-relaxed">
                         We provide everything you need to scale, from skilled virtual professionals to comprehensive digital strategies that drive real results.
                     </p>
-                </motion.div>
+                </div>
 
                 {/* Bento Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
-                    {services.map((service, index) => (
-                        <ServiceCard key={service.id} service={service} index={index} />
+                    {services.map((service) => (
+                        <ServiceCard key={service.id} service={service} />
                     ))}
                 </div>
 
                 {/* Pricing Hint / Bottom CTA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="mt-24 text-center"
-                >
+                <div className="mt-24 text-center">
                     <a
                         href="/booking"
                         className="inline-flex items-center gap-3 px-10 py-5 bg-charcoal-900 text-beige-50 font-medium rounded-full shadow-2xl hover:bg-clay-600 hover:shadow-clay-500/20 hover:-translate-y-1 transition-all duration-500 group"
@@ -126,23 +112,19 @@ export default function ServicesSection() {
                         Book a Free Strategy Call
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
-                </motion.div>
+                </div>
             </div>
         </section>
     );
 }
 
-function ServiceCard({ service, index }: { service: any; index: number }) {
+function ServiceCard({ service }: { service: any }) {
     const isLink = Boolean(service.href);
     const Icon = service.icon;
     const isDark = service.id === "branding";
 
     const cardContent = (
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
+        <div
             className={cn(
                 "group relative rounded-[2.5rem] p-8 md:p-10 border transition-all duration-700 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1",
                 isDark ? "hover:border-clay-500/50" : "border-beige-200 hover:border-clay-300",
@@ -228,7 +210,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
                     <TrendingUp className="w-32 h-32" />
                 </div>
             )}
-        </motion.div>
+        </div>
     );
 
     return isLink ? (

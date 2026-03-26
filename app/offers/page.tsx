@@ -1,6 +1,4 @@
 "use client";
-
-import { motion } from "motion/react";
 import { ArrowRight, CheckCircle, Gift, Plus, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
@@ -31,11 +29,7 @@ function OffersHero() {
       </div>
 
       <div className="section-container relative z-10 text-center w-full max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <div>
           <div className="inline-flex items-center gap-2 border border-clay-500/30 px-4 py-1.5 rounded-full mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-clay-500 animate-pulse" />
             <span className="text-clay-500 text-xs font-semibold uppercase tracking-[0.18em]">
@@ -69,7 +63,7 @@ function OffersHero() {
               Talk to Us First
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -79,13 +73,7 @@ function OffersPackages() {
   return (
     <section id="offers" className="section-padding bg-beige-100">
       <div className="section-container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <p className="text-clay-500 text-xs font-semibold uppercase tracking-[0.25em] mb-4">
             Exclusive Packages
           </p>
@@ -98,17 +86,11 @@ function OffersPackages() {
           <p className="text-espresso-800 text-lg max-w-2xl mx-auto leading-relaxed">
             Choose the offer that fits where you are or stack both for the ultimate growth engine.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Offer 1 */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-charcoal-900 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500 border border-charcoal-800/50 shadow-2xl"
-          >
+          <div className="bg-charcoal-900 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500 border border-charcoal-800/50 shadow-2xl">
             <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-clay-600 via-clay-400 to-clay-600" />
             <div className="absolute -bottom-8 -right-8 text-[12rem] font-bold text-beige-50/5 pointer-events-none" style={{ fontFamily: "var(--font-cormorant)" }}>01</div>
 
@@ -156,16 +138,10 @@ function OffersPackages() {
                 Claim This Offer <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </div>
-          </motion.div>
+          </div>
 
           {/* Offer 2 */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500 border border-beige-200 shadow-xl"
-          >
+          <div className="bg-white rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500 border border-beige-200 shadow-xl">
             <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-taupe-300 via-beige-300 to-taupe-300" />
             <div className="absolute -bottom-8 -right-8 text-[12rem] font-bold text-charcoal-900/5 pointer-events-none" style={{ fontFamily: "var(--font-cormorant)" }}>02</div>
 
@@ -212,19 +188,13 @@ function OffersPackages() {
                 Get Started <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
       {/* Bonus Banner */}
       <div className="section-container mt-16 max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-gradient-to-r from-clay-500/10 to-clay-300/10 border border-clay-500/20 rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12 relative overflow-hidden shadow-xl"
-        >
+        <div className="bg-gradient-to-r from-clay-500/10 to-clay-300/10 border border-clay-500/20 rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12 relative overflow-hidden shadow-xl">
           <div className="w-20 h-20 shrink-0 bg-clay-500 text-beige-50 rounded-2xl flex items-center justify-center shadow-lg relative z-10 hidden sm:flex">
             <Gift className="w-10 h-10" />
           </div>
@@ -252,7 +222,7 @@ function OffersPackages() {
               Claim Bundle <ArrowRight className="w-5 h-5 ml-2" />
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -288,13 +258,7 @@ function OffersProcess() {
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-taupe-500/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="section-container relative z-10 w-full max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20 md:mb-24"
-        >
+        <div className="text-center mb-20 md:mb-24">
           <p className="text-clay-500 text-xs font-semibold uppercase tracking-[0.25em] mb-4">
             Process
           </p>
@@ -304,18 +268,14 @@ function OffersProcess() {
           >
             From <em className="text-clay-400 italic">Sign-Up to Live</em> in Days
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           <div className="hidden lg:block absolute top-[4.5rem] left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-clay-500/30 to-transparent z-0" />
 
           {steps.map((step, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-espresso-900/40 backdrop-blur-md border border-beige-200/10 rounded-[2rem] p-8 hover:bg-espresso-800/60 transition-all duration-500 relative z-10 text-center lg:text-left flex flex-col h-full items-center lg:items-start"
             >
               <div className="w-16 h-16 shrink-0 rounded-2xl bg-charcoal-900 border border-clay-500/50 flex items-center justify-center mb-6">
@@ -329,7 +289,7 @@ function OffersProcess() {
               <p className="text-beige-200/60 text-sm leading-relaxed">
                 {step.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -362,13 +322,7 @@ function OffersTestimonials() {
   return (
     <section className="section-padding bg-beige-100">
       <div className="section-container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <p className="text-clay-500 text-xs font-semibold uppercase tracking-[0.25em] mb-4">
             Social Proof
           </p>
@@ -378,17 +332,11 @@ function OffersTestimonials() {
           >
             Founders <em className="text-clay-500 italic">Love</em> Us
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {testimonials.map((testi, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
+            <div key={i}>
               <Card className="border border-beige-200 shadow-sm hover:shadow-md transition-shadow rounded-2xl h-full bg-white">
                 <CardContent className="pt-8 px-8 pb-8 flex flex-col h-full">
                   <div className="text-clay-400 text-lg tracking-widest mb-4">★★★★★</div>
@@ -407,7 +355,7 @@ function OffersTestimonials() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -448,13 +396,7 @@ function OffersFAQ() {
   return (
     <section className="section-padding bg-charcoal-900 text-beige-50">
       <div className="section-container max-w-3xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <p className="text-clay-500 text-xs font-semibold uppercase tracking-[0.25em] mb-4">
             Questions
           </p>
@@ -464,18 +406,11 @@ function OffersFAQ() {
           >
             <span className="text-white">Got</span> <em className="text-clay-500 italic">Questions?</em>
           </h2>
-        </motion.div>
+        </div>
 
         <div className="space-y-4">
           {faqs.map((faq, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="border-b border-beige-200/10"
-            >
+            <div key={i} className="border-b border-beige-200/10">
               <button
                 className="w-full py-6 flex items-center justify-between text-left group gap-4"
                 onClick={() => toggle(i)}
@@ -498,7 +433,7 @@ function OffersFAQ() {
                   {faq.a}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,6 +1,4 @@
 "use client";
-
-import { motion } from "motion/react";
 import { CheckCircle2, ShieldCheck, Zap, Globe, Users2, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -39,13 +37,7 @@ export default function WhyUsSection() {
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative">
 
           {/* Sticky Sidebar */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="lg:w-1/3 lg:sticky lg:top-32 h-fit mb-12 lg:mb-0"
-          >
+          <div className="lg:w-1/3 lg:sticky lg:top-32 h-fit mb-12 lg:mb-0">
             <p className="text-clay-500 text-xs font-semibold uppercase tracking-[0.25em] mb-4">
               The Talent Mucho Edge
             </p>
@@ -74,7 +66,7 @@ export default function WhyUsSection() {
               Book a Free Call
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-          </motion.div>
+          </div>
 
           {/* Scrollable List */}
           <div className="lg:w-2/3 flex flex-col gap-6">
@@ -84,12 +76,8 @@ export default function WhyUsSection() {
               const isDark = index === 1 || index === 3;
 
               return (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   className={cn(
                     "group rounded-[2rem] p-8 md:p-10 border transition-all duration-500 relative overflow-hidden",
                     isDark
@@ -129,7 +117,7 @@ export default function WhyUsSection() {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
